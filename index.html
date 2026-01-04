@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Locked Video</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Fullscreen wrapper */
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Top preview image */
+.top-image {
+    width: 100%;
+    max-height: 35vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* Short instruction text */
+.notice-text {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    animation: blink 1.2s infinite;
+}
+
+/* Content locker iframe */
+iframe {
+    width: 100%;
+    height: calc(100vh - 35vh - 50px);
+    border: none;
+}
+
+/* GIF Container */
+.gif-container {
+    position: absolute;
+    top: calc(35vh + 50px); /* Top image + notice text height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 35vh - 50px); /* Same as iframe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Hand GIF */
+.hand-gif {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    animation: click 1s infinite;
+}
+
+/* Animations */
+@keyframes click {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Preview Image -->
+    <img src="https://i.imgur.com/00ebw8R.jpeg" class="top-image" alt="Locked Video">
+
+    <!-- Short text -->
+    <div class="notice-text">
+       Unlock the FULL video after installing 1 FREE app
+    </div>
+
+    <!-- Content Locker -->
+    <iframe src="https://hubverify.com/cl/?o=6925248a5a19d"></iframe>
+
+    <!-- GIF centered on iframe -->
+    <div class="gif-container">
+        <img src="1000021192.gif" class="hand-gif" alt="Click hand animation">
+    </div>
+
+</div>
+
+</body>
+</html>
